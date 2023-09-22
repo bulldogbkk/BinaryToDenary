@@ -1,0 +1,20 @@
+DECLARE num: INTEGER
+DECLARE digit: CHARACTER
+DECLARE answer: STRING
+
+ans <- ""
+
+OUTPUT " Please input a denary number to be converted into binary"
+INPUT num
+
+REPEAT
+  IF num % 2 = 0 THEN
+    digit <- '0'
+  ELSE
+    digit <- '1'
+  ENDIF
+  answer <- digit + answer
+  num <- num / 2
+UNTIL num < 1
+
+OUTPUT "Your number in binary is: ", answer
