@@ -1,0 +1,19 @@
+DECLARE binarynumber: STRING
+DECLARE value: INTEGER
+DECLARE placevalue: INTEGER
+
+value <- 0
+
+OUTPUT "Please enter a binary number (1s and 0s only)
+INPUT binarynumber
+
+placevalue <- POW(2,StringLength(binarynumber))
+
+FOR i <- 0 TO StringLength(binarynumber)
+  IF CharAt(binarynumber,i) == '1' THEN
+    value <- value + placevalue
+  ENDIF
+  placevalue <- placevalue / 2
+NEXT
+
+OUTPUT "The value in denary is ", value
